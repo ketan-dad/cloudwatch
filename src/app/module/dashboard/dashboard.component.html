@@ -1,0 +1,50 @@
+<h3>SOC-2 Compliance Status <button><i class="refresh icon"></i></button></h3>
+<h5>Applications</h5>
+<table class="ui teal selectable row table" style="width: auto;">
+    <thead>
+      <tr >
+          
+        <th>Name</th>
+        <th>Status</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr [ngClass]="{'data-selected': selectedRow === 1}"  (click) = "onClickApp(1)">
+        <td>App001</td>
+        <td>75% Compliance</td>
+        <td><i class="setting icon"></i></td>
+      </tr>
+      <tr [ngClass]="{'data-selected': selectedRow === 2}"  (click) = "onClickApp(2)">
+       <td>App002</td>
+        <td>67% Compliance</td>
+        <td><i class="setting icon"></i></td>
+      </tr>
+      <tr [ngClass]="{'data-selected': selectedRow === 3}"  (click) = "onClickApp(3)">
+        <td>App003</td>
+        <td>67% Compliance</td>
+        <td ><i class="setting icon"></i></td>
+      </tr>
+      <tr [ngClass]="{'data-selected': selectedRow === 4}"  (click) = "onClickApp(4)">
+        <td>App004</td>
+        <td>100% Compliance</td>
+        <td><i class="setting icon"></i></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>SOC-2 Compliance Detail Section</h3>
+
+  <table class="ui teal table" style="width: 90%;">
+    <thead>
+      <tr><th style="width: 15%;">Section</th>
+      <th style="width: 75%;">Details</th>
+      <th style="width: 10%;">Is Compliance</th>
+    </tr></thead><tbody>
+      <tr *ngFor = "let dt of app001">
+        <td>{{dt?.section}}</td>
+        <td>{{dt?.secDetail}}</td>
+        <td><i *ngIf = "dt.isCompliance==true" class="checkmark icon"></i>
+            <i *ngIf = "dt.isCompliance==false" class="remove icon"></i></td>
+      </tr>
+    </tbody>
+  </table>
