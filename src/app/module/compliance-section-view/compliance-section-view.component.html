@@ -1,0 +1,16 @@
+<div class = "content"><h3>SOC-2 Compliance Detail Section <h5></h5></h3>
+<table class="ui teal table" style="width: 90%;">
+    <thead>
+      <tr><th style="width: 15%;">Section</th>
+      <th style="width: 75%;">Details</th>
+      <th style="width: 10%;">In Compliance</th>
+    </tr></thead><tbody>
+        <tr *ngFor = "let dt of app001">
+            <td>{{dt?.section}}</td>
+            <td>{{dt?.secDetail}}</td>
+            <td><i *ngIf = "dt.isCompliance==true" class="checkmark icon"></i>
+                <i *ngIf = "dt.isCompliance==false" class="remove icon"></i></td>
+          </tr>
+    </tbody>
+  </table>
+</div>
